@@ -1,12 +1,12 @@
-// src/components/Navbar.js
 "use client";
-
 import Link from 'next/link';
 import { useState } from 'react';
-import { UserCircleIcon } from '@heroicons/react/24/outline'; // Import the new icon
+import { usePathname } from 'next/navigation'; // Add this import
+import { UserCircleIcon } from '@heroicons/react/24/outline';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // Add this line
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -34,17 +34,17 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:block sm:ml-6">
               <div className="flex space-x-4">
-                <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
-                <Link href="/news" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">News</Link>
-                <Link href="/map" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Camps</Link>
-                <Link href="/volunteer" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Volunteer</Link>
-                <Link href="/guide" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Guide</Link>
+                <Link href="/" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Home</Link>
+                <Link href="/news" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/news' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>News</Link>
+                <Link href="/map" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/map' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Camps</Link>
+                <Link href="/volunteer" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/volunteer' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Volunteer</Link>
+                <Link href="/guide" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/guide' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Guide</Link>
               </div>
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center">
             <Link href="/profile/signup" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
-              <UserCircleIcon className="h-8 w-8 mr-2" /> {/* Use the new icon */}
+              <UserCircleIcon className="h-8 w-8 mr-2" />
               Profile
             </Link>
           </div>
@@ -52,12 +52,12 @@ export default function Navbar() {
       </div>
       <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</Link>
-          <Link href="/news" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">News</Link>
-          <Link href="/camps" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Camps</Link>
-          <Link href="/volunteer" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Volunteer</Link>
-          <Link href="/guide" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Guide</Link>
-          <Link href="/profile" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Profile</Link>
+          <Link href="/" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Home</Link>
+          <Link href="/news" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/news' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>News</Link>
+          <Link href="/camps" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/camps' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Camps</Link>
+          <Link href="/volunteer" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/volunteer' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Volunteer</Link>
+          <Link href="/guide" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/guide' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Guide</Link>
+          <Link href="/profile" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/profile' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Profile</Link>
         </div>
       </div>
     </nav>
