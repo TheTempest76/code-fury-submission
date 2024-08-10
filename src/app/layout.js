@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-black">
         <Navbar />
-        <main className="container mx-auto mt-8 px-4">
+        <main>
           {children}
         </main>
         
