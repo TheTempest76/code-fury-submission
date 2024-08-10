@@ -3,6 +3,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { UserCircleIcon } from '@heroicons/react/24/outline'; // Import the new icon
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,9 +44,7 @@ export default function Navbar() {
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center">
             <Link href="/profile/signup" className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium flex items-center">
-              <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5.121 17.804A3 3 0 016 17h12a3 3 0 01.879.804M15 10a3 3 0 11-6 0 3 3 0 016 0zM18 14a6 6 0 11-12 0 6 6 0 0112 0z" />
-              </svg>
+              <UserCircleIcon className="h-8 w-8 mr-2" /> {/* Use the new icon */}
               Profile
             </Link>
           </div>
@@ -56,7 +55,8 @@ export default function Navbar() {
           <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</Link>
           <Link href="/news" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">News</Link>
           <Link href="/camps" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Camps</Link>
-          <Link href="/guides" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Volunteer Guides</Link>
+          <Link href="/volunteer" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Volunteer</Link>
+          <Link href="/guide" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Guide</Link>
           <Link href="/profile" className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Profile</Link>
         </div>
       </div>
