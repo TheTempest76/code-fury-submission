@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api'
-
+import { reliefLocations } from '@/lib/utils';
 const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
 const mapContainerStyle = {
@@ -15,13 +15,6 @@ const center = {
 }
 
 // Dummy data for shelters, NGOs, and other relief places
-const reliefLocations = [
-  { id: 1, name: "Red Cross Shelter", type: "Shelter", lat: 19.0760, lng: 72.8777 },
-  { id: 2, name: "NGO Disaster Relief", type: "NGO", lat: 28.6139, lng: 77.2090 },
-  { id: 3, name: "Emergency Medical Center", type: "Hospital", lat: 13.0827, lng: 80.2707 },
-  { id: 4, name: "Community Aid Center", type: "NGO", lat: 22.5726, lng: 88.3639 },
-  { id: 5, name: "Temporary Housing Facility", type: "Shelter", lat: 17.3850, lng: 78.4867 },
-];
 
 export default function Map() {
   const [userLocation, setUserLocation] = useState(null)
@@ -60,14 +53,14 @@ export default function Map() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-6">Emergency Services Map</h1>
+      <h1 className="text-3xl font-bold mb-6 text-white">Emergency Services Map</h1>
       <button
         onClick={handleLocationClick}
         className="bg-blue-500 text-white px-4 py-2 rounded mb-4 hover:bg-blue-600 transition"
       >
         Use My Location
       </button>
-      <div className="mb-4">
+      <div className="mb-4 text-white">
         <span className="mr-4"><span className="inline-block w-4 h-4 bg-blue-500 rounded-full mr-2"></span>Shelter</span>
         <span className="mr-4"><span className="inline-block w-4 h-4 bg-green-500 rounded-full mr-2"></span>NGO</span>
         <span><span className="inline-block w-4 h-4 bg-red-500 rounded-full mr-2"></span>Hospital</span>

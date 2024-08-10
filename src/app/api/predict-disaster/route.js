@@ -23,7 +23,7 @@ export async function GET(request) {
       params: {
         key: WEATHER_API_KEY,
         q: location,
-        days: 7,
+        days: 30,
       },
     });
 
