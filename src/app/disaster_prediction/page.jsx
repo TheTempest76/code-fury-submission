@@ -82,7 +82,7 @@ export default function Home() {
           </table>
           </div>
         ) : (
-          <p>No risks predicted yet. Enter a location to see predictions.</p>
+          <p className='text-white'>No risks predicted yet. Enter a location to see predictions.</p>
         )}
       </div>
         <div className='mt-10'>
