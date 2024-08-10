@@ -1,27 +1,41 @@
 'use client';
 
 import { useState } from 'react';
-import DisasterMap from '../../components/disaster';
+import DisasterMap from '../../components/disasterMap';
 
 export default function Home() {
   const [location, setLocation] = useState('');
   const [risks, setRisks] = useState([]);
   const [error, setError] = useState('');
+  const [mapCenter, setMapCenter] = useState({ lat: 0, lng: 0 });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     try {
-      const response = await fetch(`/api/predict-disaster?location=${location}`);
-      if (!response.ok) throw new Error('Failed to fetch data');
+      const url = `/api/predict-disaster?location=${encodeURIComponent(location)}`;
+      console.log('Fetching from URL:', url);
+      
+      const response = await fetch(url);
+      console.log('Response status:', response.status);
+      
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Failed to fetch data: ${response.status} ${errorText}`);
+      }
+      
       const data = await response.json();
+      console.log('Received data:', data);
+      
       setRisks(data.risks);
+      if (data.coordinates) {
+        setMapCenter({ lat: data.coordinates.lat, lng: data.coordinates.lon });
+      }
     } catch (err) {
-      setError('Failed to predict disasters. Please try again.');
-      console.error(err);
+      setError(`Failed to predict disasters: ${err.message}`);
+      console.error('Detailed error:', err);
     }
   };
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -53,7 +67,7 @@ export default function Home() {
         )}
       </div>
 
-      <DisasterMap center={{ lat: 0, lng: 0 }} risks={risks} />
+      <DisasterMap center={mapCenter} risks={risks} />
     </div>
   );
 }

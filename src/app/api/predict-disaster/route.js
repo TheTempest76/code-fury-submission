@@ -12,7 +12,13 @@ export async function GET(request) {
     return NextResponse.json({ error: 'Location is required' }, { status: 400 });
   }
 
+  if (!WEATHER_API_KEY) {
+    console.error('WEATHER_API_KEY is not set');
+    return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
+  }
+
   try {
+    console.log('Fetching weather data for:', location);
     const response = await axios.get(WEATHER_API_URL, {
       params: {
         key: WEATHER_API_KEY,
@@ -21,16 +27,21 @@ export async function GET(request) {
       },
     });
 
+    console.log('Weather API response status:', response.status);
+
     const forecast = response.data.forecast.forecastday;
     const risks = analyzeForecast(forecast);
+    const coordinates = {
+      lat: response.data.location.lat,
+      lon: response.data.location.lon
+    };
 
-    return NextResponse.json({ risks });
+    return NextResponse.json({ risks, coordinates });
   } catch (error) {
-    console.error('Weather API error:', error);
-    return NextResponse.json({ error: 'Failed to fetch weather data' }, { status: 500 });
+    console.error('Weather API error:', error.response ? error.response.data : error.message);
+    return NextResponse.json({ error: 'Failed to fetch weather data', details: error.message }, { status: 500 });
   }
 }
-
 function analyzeForecast(forecast) {
   return forecast.map(day => {
     const { date, day: { maxtemp_c, mintemp_c, maxwind_kph, totalprecip_mm, avghumidity } } = day;
@@ -54,3 +65,4 @@ function analyzeForecast(forecast) {
     };
   });
 }
+// ... rest of the file remains the same
