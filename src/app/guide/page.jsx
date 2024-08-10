@@ -190,7 +190,7 @@ export default function Home() {
             </button>
             <button
               style={volunteerButtonStyle}
-              onClick={() => handleButtonClick('volunteer')}
+              onClick={() => router.push('../volunteer')}
               onMouseOver={e => {
                 e.currentTarget.style.backgroundColor = volunteerButtonHoverStyle.backgroundColor;
                 e.currentTarget.style.color = volunteerButtonHoverStyle.color;
