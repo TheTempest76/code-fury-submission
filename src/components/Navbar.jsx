@@ -39,7 +39,7 @@ export default function Navbar() {
                 <Link href="/map" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/map' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Camps</Link>
                 <Link href="/volunteer" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/volunteer' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Volunteer</Link>
                 <Link href="/guide" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/guide' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Guide</Link>
-                <Link href="/disaster_prediction" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/guide' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Historical Risk</Link>
+                <Link href="/disaster_prediction" className={`px-3 py-2 rounded-md text-sm font-medium ${pathname === '/guide' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Risk Predictor</Link>
               </div>
             </div>
           </div>

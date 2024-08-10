@@ -40,7 +40,7 @@ export default function Home() {
         <div className="mt-6 flex justify-center">
           <Link href="/disaster_prediction" className="bg-yellow-500 text-white p-6 rounded-lg shadow-md hover:bg-yellow-600 transition">
             <h2 className="text-2xl font-semibold mb-2">Identify risky areas</h2>
-            <p>find out the risk level of an area using forecast data</p>
+            <p>find out the risk level of an area for the next month using forecast data</p>
           </Link>
         </div>
       </div>
