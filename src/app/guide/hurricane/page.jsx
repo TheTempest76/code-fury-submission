@@ -49,7 +49,7 @@ const Hurricanes = () => {
         </ul>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           <Image
-            src="/images/hurricane.jpg" // Path to your image file in the public/images directory
+            src="/images/hrimg.jpeg" // Path to your image file in the public/images directory
             alt="Hurricane Safety Tips"
             width={560} // Set the width of the image
             height={300} // Set the height of the image
