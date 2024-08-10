@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="bg-gray-100">
         <Navbar />
-        <main className="container mx-auto mt-8 px-4">
+        <main>
           {children}
         </main>
         <footer className="bg-gray-200 mt-12 py-6">
