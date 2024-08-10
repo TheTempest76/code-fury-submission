@@ -23,7 +23,6 @@ export default function Home() {
     margin: '0.5rem',
     position: 'relative',
     overflow: 'hidden', // To ensure the icon doesn't overflow
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // Added text shadow
   };
 
   const disasterButtonStyle = (imageUrl) => ({
@@ -39,29 +38,33 @@ export default function Home() {
     background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imageUrl})`,
   });
 
+  // Matching Navbar Colors
+  const navbarBackgroundColor = '#2d3748'; // Dark gray (navbar background)
+  const navbarHoverColor = '#4a5568'; // Lighter gray (hover state)
+
   const volunteerButtonStyle = {
     ...baseButtonStyle,
     backgroundColor: 'white',
-    color: '#ff6f61', // Text color for the volunteer button
-    border: '5px solid #ff6f61', // Increased border width
+    color: navbarBackgroundColor, // Text color for the volunteer button
+    border: `5px solid ${navbarBackgroundColor}`, // Border color for the volunteer button
     transition: 'background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease', // Added color transition
   };
 
   const volunteerButtonHoverStyle = {
     ...volunteerButtonStyle,
-    backgroundColor: '#ff6f61', // No change to background on hover
+    backgroundColor: navbarBackgroundColor, // Background color on hover
     color: 'white', // Text color on hover
-    borderColor: '#ff6f61',
+    borderColor: navbarBackgroundColor,
   };
 
-  const arrowStyle = {
+  const arrowStyle = (isVolunteerButton = false) => ({
     position: 'absolute',
     bottom: '10px',
     right: '10px',
     width: '30px',
     height: '30px',
-    color: '#ffffff', // Arrow color
-  };
+    color: isVolunteerButton ? navbarBackgroundColor : 'white', // Arrow color
+  });
 
   const handleButtonClick = (path) => {
     router.push(`../guide/${path}`);
@@ -76,9 +79,9 @@ export default function Home() {
       </Head>
 
       <main style={{ textAlign: 'center' }}>
-        <h1 style={{ fontSize: '4rem', lineHeight: '1.15', margin: '2rem 0', color: '#333' }}>Disaster Guide</h1> {/* Updated text color */}
+        <h1 style={{ fontSize: '4rem', lineHeight: '1.15', margin: '2rem 0', color: '#333', fontWeight: 'bold' }}>Disaster Guide</h1> {/* Updated text color and added bold font weight */}
         
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', paddingBottom: '3rem' }}> {/* Added padding at the bottom */}
           {/* Rows with buttons */}
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
             <button
@@ -92,7 +95,7 @@ export default function Home() {
               }}
             >
               Earthquake
-              <ChevronRightIcon style={arrowStyle} />
+              <ChevronRightIcon style={arrowStyle()} />
             </button>
             <button
               style={disasterButtonStyle('/images/fld1.jpg')}
@@ -105,7 +108,7 @@ export default function Home() {
               }}
             >
               Flood
-              <ChevronRightIcon style={arrowStyle} />
+              <ChevronRightIcon style={arrowStyle()} />
             </button>
             <button
               style={disasterButtonStyle('/images/wf1.jpg')}
@@ -118,7 +121,7 @@ export default function Home() {
               }}
             >
               Wildfire
-              <ChevronRightIcon style={arrowStyle} />
+              <ChevronRightIcon style={arrowStyle()} />
             </button>
             <button
               style={disasterButtonStyle('/images/tn1.jpg')}
@@ -131,7 +134,7 @@ export default function Home() {
               }}
             >
               Tornado
-              <ChevronRightIcon style={arrowStyle} />
+              <ChevronRightIcon style={arrowStyle()} />
             </button>
             <button
               style={disasterButtonStyle('/images/hr1.jpg')}
@@ -144,7 +147,7 @@ export default function Home() {
               }}
             >
               Hurricane
-              <ChevronRightIcon style={arrowStyle} />
+              <ChevronRightIcon style={arrowStyle()} />
             </button>
             <button
               style={disasterButtonStyle('/images/vl1.jpg')}
@@ -157,7 +160,7 @@ export default function Home() {
               }}
             >
               Volcano
-              <ChevronRightIcon style={arrowStyle} />
+              <ChevronRightIcon style={arrowStyle()} />
             </button>
             <button
               style={disasterButtonStyle('/images/dt1.jpg')}
@@ -170,7 +173,7 @@ export default function Home() {
               }}
             >
               Drought
-              <ChevronRightIcon style={arrowStyle} />
+              <ChevronRightIcon style={arrowStyle()} />
             </button>
             <button
               style={disasterButtonStyle('/images/ld1.jpg')}
@@ -183,7 +186,7 @@ export default function Home() {
               }}
             >
               Landslide
-              <ChevronRightIcon style={arrowStyle} />
+              <ChevronRightIcon style={arrowStyle()} />
             </button>
             <button
               style={volunteerButtonStyle}
@@ -198,7 +201,7 @@ export default function Home() {
               }}
             >
               Volunteer
-              <ChevronRightIcon style={arrowStyle} />
+              <ChevronRightIcon style={arrowStyle(true)} />
             </button>
           </div>
         </div>
