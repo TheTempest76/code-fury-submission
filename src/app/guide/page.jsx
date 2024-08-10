@@ -1,10 +1,12 @@
-// pages/index.js
 "use client";
 
 import Head from 'next/head';
 import { ChevronRightIcon } from '@heroicons/react/24/solid'; // Import the icon
+import { useRouter } from 'next/navigation'; // Import useRouter from next/navigation
 
 export default function Home() {
+  const router = useRouter(); // Initialize the router
+
   const baseButtonStyle = {
     fontSize: '2rem', // Increased font size
     fontWeight: 'bold', // Added bold font weight
@@ -61,6 +63,10 @@ export default function Home() {
     color: '#ffffff', // Arrow color
   };
 
+  const handleButtonClick = (route) => {
+    router.push(`/guide/${route.toLowerCase()}`); // Navigate to /guide/[route]
+  };
+
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '0 0.5rem', backgroundColor: '#f0f4f8' }}> {/* Updated background color */}
       <Head>
@@ -83,6 +89,7 @@ export default function Home() {
               onMouseOut={e => {
                 e.currentTarget.style.background = disasterButtonStyle('/images/et1.jpg').background;
               }}
+              onClick={() => handleButtonClick('earthquake')}
             >
               Earthquake
               <ChevronRightIcon style={arrowStyle} />
@@ -95,6 +102,7 @@ export default function Home() {
               onMouseOut={e => {
                 e.currentTarget.style.background = disasterButtonStyle('/images/fld1.jpg').background;
               }}
+              onClick={() => handleButtonClick('flood')}
             >
               Flood
               <ChevronRightIcon style={arrowStyle} />
@@ -107,6 +115,7 @@ export default function Home() {
               onMouseOut={e => {
                 e.currentTarget.style.background = disasterButtonStyle('/images/wf1.jpg').background;
               }}
+              onClick={() => handleButtonClick('wildfire')}
             >
               Wildfire
               <ChevronRightIcon style={arrowStyle} />
@@ -119,6 +128,7 @@ export default function Home() {
               onMouseOut={e => {
                 e.currentTarget.style.background = disasterButtonStyle('/images/tn1.jpg').background;
               }}
+              onClick={() => handleButtonClick('tornado')}
             >
               Tornado
               <ChevronRightIcon style={arrowStyle} />
@@ -131,6 +141,7 @@ export default function Home() {
               onMouseOut={e => {
                 e.currentTarget.style.background = disasterButtonStyle('/images/hr1.jpg').background;
               }}
+              onClick={() => handleButtonClick('hurricane')}
             >
               Hurricane
               <ChevronRightIcon style={arrowStyle} />
@@ -143,6 +154,7 @@ export default function Home() {
               onMouseOut={e => {
                 e.currentTarget.style.background = disasterButtonStyle('/images/vl1.jpg').background;
               }}
+              onClick={() => handleButtonClick('volcano')}
             >
               Volcano
               <ChevronRightIcon style={arrowStyle} />
@@ -155,6 +167,7 @@ export default function Home() {
               onMouseOut={e => {
                 e.currentTarget.style.background = disasterButtonStyle('/images/dt1.jpg').background;
               }}
+              onClick={() => handleButtonClick('drought')}
             >
               Drought
               <ChevronRightIcon style={arrowStyle} />
@@ -167,6 +180,7 @@ export default function Home() {
               onMouseOut={e => {
                 e.currentTarget.style.background = disasterButtonStyle('/images/ld1.jpg').background;
               }}
+              onClick={() => handleButtonClick('landslide')}
             >
               Landslide
               <ChevronRightIcon style={arrowStyle} />
@@ -181,6 +195,7 @@ export default function Home() {
                 e.currentTarget.style.backgroundColor = volunteerButtonStyle.backgroundColor;
                 e.currentTarget.style.color = volunteerButtonStyle.color;
               }}
+              onClick={() => handleButtonClick('volunteer')}
             >
               Volunteer
               <ChevronRightIcon style={arrowStyle} />
