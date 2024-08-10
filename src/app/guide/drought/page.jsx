@@ -49,7 +49,7 @@ const Drought = () => {
         </ul>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           <Image
-            src="/images/drought.jpg" // Path to your image file in the public/images directory
+            src="/images/dtimg.jpg.jpg" // Path to your image file in the public/images directory
             alt="Drought Safety Tips"
             width={560} // Set the width of the image
             height={300} // Set the height of the image
