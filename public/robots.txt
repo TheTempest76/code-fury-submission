@@ -1,0 +1,14 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /admin
+Disallow: /private
+
+# Host
+Host: https://code-fury-submission.vercel.app
+
+# Sitemaps
+Sitemap: https://code-fury-submission.vercel.app/sitemap.xml
