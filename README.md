@@ -1,10 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Relief Compass
+
+## About
+
+Relief Compass is a comprehensive platform for disaster preparedness and response. Our goal is to empower communities and save lives by providing up-to-date information, resources, and tools for disaster management.
+
+## Features
+
+1. **Latest News**
+
+   - Stay updated on current disasters and relief efforts.
+   - Real-time news feed with critical information.
+
+2. **Emergency Services**
+
+   - Find nearby NGOs, hospitals, and shelters.
+   - Uses geolocation to connect users with 100+ relief places across India.
+
+3. **Volunteer**
+
+   - Sign up to help those in need.
+   - Secure authentication through Firebase.
+   - Integrated Google Form for volunteer registration.
+
+4. **Guides**
+
+   - Learn how to volunteer and prepare for disasters.
+   - Gamified, easy-to-understand guides covering 8 major natural disasters.
+
+5. **Identify Risky Areas**
+
+   - Assess the risk level of an area using forecast data.
+   - Analyzes past month's weather conditions to determine daily risk levels.
+
+6. **Home**
+
+   - Central hub for accessing all features.
+
+7. **AI Chatbot**
+   - Toggleable iframe for instant assistance.
+   - 24/7 support for navigation and information.
+
+## Technologies
+
+- Next.js (App Router)
+- React.js
+- Tailwind CSS
+- Firebase (Authentication)
 
 ## Getting Started
 
-First, run the development server:
+## Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/protocols12/code-fury-submission
+
+# Navigate to the project directory
+cd relief-compass
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+# (Include instructions for setting up Firebase and other necessary APIs)
+
+# Run the development server
 npm run dev
 # or
 yarn dev
@@ -14,23 +74,18 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+(Provide instructions on how to use the application, including any necessary commands or steps for running different features)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contributing
 
-## Learn More
+We welcome contributions to Relief Compass! Please read our contributing guidelines before submitting pull requests.
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+For any queries or support, please contact us at teamprotocolpov@gmail.com
