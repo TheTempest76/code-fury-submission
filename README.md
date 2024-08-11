@@ -74,13 +74,9 @@ pnpm dev
 bun dev
 ```
 
-## Usage
-
-(Provide instructions on how to use the application, including any necessary commands or steps for running different features)
-
 ## Contributing
 
-We welcome contributions to Relief Compass! Please read our contributing guidelines before submitting pull requests.
+Our Website is still in development phase therefore we welcome all contributions to Relief Compass! Please read our contributing guidelines before submitting pull requests.
 
 ## License
 
