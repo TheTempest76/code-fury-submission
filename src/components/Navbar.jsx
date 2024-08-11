@@ -55,10 +55,10 @@ export default function Navbar() {
         <div className="px-2 pt-2 pb-3 space-y-1">
           <Link href="/" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Home</Link>
           <Link href="/news" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/news' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>News</Link>
-          <Link href="/camps" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/camps' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Camps</Link>
+          <Link href="/map" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/camps' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Camps</Link>
           <Link href="/volunteer" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/volunteer' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Volunteer</Link>
           <Link href="/guide" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/guide' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Guide</Link>
-          <Link href="/profile" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/profile' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Profile</Link>
+          <Link href="/disaster_prediction" className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === '/profile' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}`}>Risk Predictor</Link>
         </div>
       </div>
     </nav>
